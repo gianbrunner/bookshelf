@@ -7,3 +7,9 @@ GET     /                           controllers.HomeController.index
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+GET     /api/bookshelf              controllers.BookController.getBooks(q: String ?= null)
+POST    /api/bookshelf/             controllers.BookController.createBook()
+PUT     /api/bookshelf/:id          controllers.BookController.changeBook(id: Int)
+GET     /api/bookshelf/:id          controllers.BookController.getBook(id: Int)
+DELETE  /api/bookshelf/:id          controllers.BookController.deleteBook(id: Int)
